@@ -3,9 +3,9 @@
     <v-card-title>View matchup specific techniques</v-card-title>
     <v-container>
       <v-row>
-        <v-col v-for="char in characters" v-bind:key="char.imgSrc">
+        <v-col v-for="char in characters" v-bind:key="char.id">
           <v-btn v-on:click="onCharacterButtonClick(char)">
-            {{ char.name }}
+            {{ char.data.name }}
           </v-btn>
         </v-col>
       </v-row>
@@ -14,54 +14,30 @@
 </template>
 
 <script>
+const axios = require("axios");
 export default {
   data: () => ({
-    characters: [
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-    ],
+    characters: [],
   }),
 
   methods: {
     onCharacterButtonClick(character) {
       this.$router.push({
         name: "VersusChar",
-        params: { character: character.name },
+        params: { character: character.data.name },
       });
     },
+  },
+
+  created() {
+    axios({
+      method: "GET",
+      url:
+        "http://localhost:5001/thecookbook-5c258/us-central1/app/api/characters",
+    }).then((res) => {
+      this.characters = res.data;
+      console.log(this.characters);
+    });
   },
 };
 </script>
