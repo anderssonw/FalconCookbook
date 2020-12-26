@@ -17,18 +17,9 @@
         </v-toolbar-title>
       </v-toolbar>
     </v-row>
-    <v-row class="menuBar" align="center" justify="center">
-      <v-col cols="3">
-        <router-link :to="`/vs`">Versus</router-link>
-      </v-col>
-      <v-col cols="3">
-        <router-link :to="`/vs`">General Guides</router-link>
-      </v-col>
-      <v-col cols="3">
-        <router-link :to="`/vs`">About</router-link>
-      </v-col>
-      <v-col cols="3">
-        <router-link :to="`/vs`">Something else</router-link>
+    <v-row class="menuBar" align=center justify="space-around">
+      <v-col v-for="route in menuRoutes" v-bind:key="route.text">
+        <router-link :to="route.link">{{route.text}}</router-link>
       </v-col>
     </v-row>
   </v-container>
@@ -37,11 +28,34 @@
 <script>
 export default {
   name: "Toolbar",
+
+  data: () => ({
+    menuRoutes: [
+      {
+        link: "/vs",
+        text: "Versus"
+      },
+      {
+        link: "/general",
+        text: "General Guides"
+      }
+    ]
+
+
+  })
 };
 </script>
 
 <style>
 .toolbarTitle {
   filter: drop-shadow(0px 0px 2px #000000);
+}
+
+a {
+  text-decoration: none;
+}
+
+.menuBar {
+  text-align:center
 }
 </style>

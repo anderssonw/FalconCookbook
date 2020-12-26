@@ -22,6 +22,11 @@ const routes = [
         name: "VersusChar",
         component: () => import("../views/VersusChar.vue"),
       },
+      {
+        path: "vs/:character/:fundamental",
+        name: "VersusCharFundamental",
+        component: () => import("../views/VersusCharFundies.vue"),
+      },
     ],
   },
   {

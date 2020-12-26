@@ -3,7 +3,46 @@
     <v-card-title>Versus {{ $route.params.character }}</v-card-title>
     <v-container>
       <v-row>
-        <v-col>Some stuff here</v-col>
+        <v-col class="neutral">
+          <v-card color=green hover v-on:click="fundamentalCardClick(`neutral`)">
+            <v-card-title>
+              Neutral
+            </v-card-title>
+            <v-icon>
+              mdi-brain
+            </v-icon>
+          </v-card>
+        </v-col>
+        <v-col style="display:inline" class="punish">
+          <v-card color=red hover v-on:click="fundamentalCardClick(`punish`)">
+            <v-card-title>
+              Punish
+            </v-card-title>
+            <v-icon>
+                mdi-sword
+            </v-icon>
+          </v-card>
+        </v-col>
+        <v-col class="defense">
+          <v-card color=blue hover v-on:click="fundamentalCardClick(`defense`)">
+            <v-card-title>
+              Defense
+            </v-card-title>
+            <v-icon>
+              mdi-shield
+            </v-icon>
+          </v-card>
+        </v-col>
+        <v-col class="edgeguards">
+          <v-card color=orange :hover="true" v-on:click="fundamentalCardClick(`edgeguards`)">
+            <v-card-title>
+              Edgeguards
+            </v-card-title>
+            <v-icon>
+              mdi-content-save
+            </v-icon>
+          </v-card>
+        </v-col>
       </v-row>
     </v-container>
   </v-card>
@@ -11,52 +50,22 @@
 
 <script>
 export default {
+
   data: () => ({
-    characters: [
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-      {
-        name: "Falco",
-        imgSrc:
-          "https://static.wikia.nocookie.net/ssb/images/e/e1/Falco_Head_01_%28SSBM%29.png/revision/latest/scale-to-width-down/24?cb=20160118221914",
-      },
-    ],
   }),
 
-  methods: {},
-
-  mounted() {
-    console.log(this.$route.params);
+  methods: {
+    fundamentalCardClick(e) {
+      this.$router.push({
+        name: "VersusCharFundamental",
+        params: { fundamental: e },
+      });
+    }
   },
+
+
 };
 </script>
 
-<style></style>
+<style scoped>
+</style>

@@ -5,13 +5,15 @@ const cors = require("cors");
 
 const app = express();
 
-admin.initializeApp();
+//admin.initializeApp();
+
+console.log(admin.initializeApp())
 const db = admin.firestore();
 
-app.use(cors("*"));
+app.use(cors({credentials: true, origin: true}));
 
 app.get("/api/characters", async (req, res) => {
-  const charsRef = db.collection("characters");
+  const charsRef = await db.collection("characters");
   const characters = await charsRef.get();
 
   if (characters.empty) {
