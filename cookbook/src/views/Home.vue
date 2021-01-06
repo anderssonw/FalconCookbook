@@ -1,8 +1,8 @@
 <template>
-	<div>
-		<Toolbar />
-		<router-view />
-	</div>
+  <div>
+    <Toolbar />
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -11,10 +11,10 @@ import Toolbar from '@/components/Toolbar.vue'
 //mport GFYDrop from "@/components/GFYDrop.vue";
 
 export default {
-	name: 'Home',
-	components: {
-		//GFYDrop,
-		Toolbar,
-	},
+  name: 'Home',
+  components: {
+    //GFYDrop,
+    Toolbar,
+  },
 }
 </script>
