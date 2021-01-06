@@ -5,9 +5,7 @@ const cors = require("cors");
 
 const app = express();
 
-//admin.initializeApp();
-
-console.log(admin.initializeApp())
+admin.initializeApp();
 const db = admin.firestore();
 
 app.use(cors({credentials: true, origin: true}));
