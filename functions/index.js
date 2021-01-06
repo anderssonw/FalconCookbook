@@ -56,7 +56,6 @@ app.get("/api/categories/:category/guides", async (req, res) => {
     guides.forEach((doc) => {
       out.push({ id: doc.id, data: doc.data() });
     });
-    console.log(JSON.stringify(out, null, 2));
     res.status(200).json(out);
   }
 });
