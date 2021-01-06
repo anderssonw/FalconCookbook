@@ -22,13 +22,17 @@
           {{ description }}
         </v-card-subtitle>
         <iframe
-          :src="fullGfyEmbedSrc(gfySrc)"
+          v-for="gfy in gfySrc"
+          :key="gfy"
+          :src="fullGfyEmbedSrc(gfy)"
           frameborder="0"
           scrolling="no"
           allowfullscreen
           width="400"
           height="300"
-        ></iframe>
+        >
+        </iframe>
+        <iframe></iframe>
       </div>
     </v-expand-transition>
   </v-card>
@@ -41,7 +45,7 @@ export default {
   props: {
     title: String,
     description: String,
-    gfySrc: String,
+    gfySrc: [String],
   },
 
   methods: {
