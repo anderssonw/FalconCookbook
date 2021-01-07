@@ -1,53 +1,46 @@
 <template>
-  <v-container class="pa-0 ma-0">
-    <v-row>
-      <v-toolbar
-        prominent
-        src="https://venturebeat.com/wp-content/uploads/2016/03/smashmelee.jpg?fit=1920%2C1080&strip=all"
-      >
-        <template v-slot:img="{ props }">
-          <v-img class="b-img" v-bind="props" gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"></v-img>
-        </template>
-        <v-toolbar-title class="toolbarTitle"> The Falcon Discord Cookbook </v-toolbar-title>
-      </v-toolbar>
-    </v-row>
-    <v-row class="menuBar" align="center" justify="space-around">
-      <v-col v-for="route in menuRoutes" v-bind:key="route.text">
-        <router-link :to="route.link">{{ route.text }}</router-link>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="red pa-0 my-8">
+    <v-container class="toolbar pa-0 ">
+      <v-row>
+        <v-col class="pa-0">
+          <v-row><v-col class="cptfalcon text pa-0 mb-n3">THE CAPTAIN FALCON</v-col></v-row>
+          <v-row><v-col class="cookbook text pa-0 my-n3">COOKBOOK</v-col></v-row>
+        </v-col>
+        <v-col class="logo" yellow>
+          Some text or something
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Toolbar',
 
-  data: () => ({
-    menuRoutes: [
-      {
-        link: '/vs',
-        text: 'Versus',
-      },
-      {
-        link: '/general',
-        text: 'General Guides',
-      },
-    ],
-  }),
+  data: () => ({}),
 }
 </script>
 
 <style>
-.toolbarTitle {
-  filter: drop-shadow(0px 0px 2px #000000);
+.toolbar {
 }
 
-a {
-  text-decoration: none;
+.text {
+  color: #d3a40f;
+  font-weight: bold;
+  font-style: italic;
 }
 
-.menuBar {
-  text-align: center;
+.cptfalcon {
+  font-size: 2em;
+}
+
+.cookbook {
+  font-size: 3em;
+}
+
+.logo {
+  color: #d3a40f;
 }
 </style>

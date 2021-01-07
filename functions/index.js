@@ -12,7 +12,7 @@ app.use(cors({ credentials: true, origin: true }));
 
 app.get("/api/characters", async (req, res) => {
   const charsRef = await db.collection("characters");
-  const characters = await charsRef.get();
+  const characters = await charsRef.orderBy("index").get();
 
   if (characters.empty) {
     res.sendStatus(204);
