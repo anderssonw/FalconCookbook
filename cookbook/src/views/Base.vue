@@ -1,7 +1,7 @@
 <template>
   <div>
     <Toolbar />
-    <div class="content pt-4 pb-12 mx-12 blue">
+    <div class="content pt-4 pb-12 mb-12 mx-12 blue">
       <Menu />
       <router-view />
     </div>
