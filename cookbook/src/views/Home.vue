@@ -1,33 +1,32 @@
 <template>
-  <div>
-    <Toolbar />
-    <v-container fluid class="container" blue>
-      <Menu />
-      <router-view />
-    </v-container>
-  </div>
+  <v-container fluid>
+    <v-row>
+      <v-col class="red" cols="7">
+        Welcome to the Captain Falcon Cookbook!
+      </v-col>
+      <v-col class="red" align="center" offset="1" cols="4">
+        Captain Falcon R&D
+        <iframe
+          src="https://discord.com/widget?id=169156844739100672&theme=dark"
+          width="350"
+          height="500"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        ></iframe>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import Toolbar from '@/components/Toolbar.vue'
-import Menu from '../components/Menu.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    Toolbar,
-    Menu,
-  },
+  data: () => ({}),
+
+  methods: {},
+
+  created() {},
 }
 </script>
-<style scoped>
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  padding-left: 10em;
-  padding-right: 10em;
-  padding-bottom: 5em;
-}
-</style>
+
+<style></style>

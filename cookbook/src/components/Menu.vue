@@ -1,5 +1,5 @@
 <template>
-  <ul class="py-3 px-0 menu">
+  <ul class="pb-4 px-0 menu">
     <router-link tag="li" class="menu-ref" v-for="route in menuRoutes" v-bind:key="route.text" :to="route.link">
       {{ route.text }}
     </router-link>
