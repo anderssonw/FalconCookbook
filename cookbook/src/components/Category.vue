@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card tile class="red" width="80%">
     <v-card-actions>
       <v-card-title>{{ category.data.title }}</v-card-title>
 
@@ -10,7 +10,7 @@
       </v-btn>
     </v-card-actions>
     <v-expand-transition>
-      <div v-show="show">
+      <div v-show="show" class="red">
         <v-divider></v-divider>
         <!-- beautiful key hack cuz idk what to put-->
         <div v-for="guide in guides" :key="guide.id">

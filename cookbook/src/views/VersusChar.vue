@@ -1,5 +1,5 @@
 <template>
-  <v-card width="80%">
+  <v-card tile class="red">
     <v-card-title>Versus {{ $route.params.character }}</v-card-title>
     <v-container>
       <v-row>

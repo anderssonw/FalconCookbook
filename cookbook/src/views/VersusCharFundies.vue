@@ -1,5 +1,5 @@
 <template>
-  <v-card width="80%">
+  <v-card tile class="red">
     <v-card-title>Versus {{ $route.params.character }} {{ $route.params.fundamental }}</v-card-title>
     <Category v-for="category in categories" :key="category.id" :category="category" />
   </v-card>
