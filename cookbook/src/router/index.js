@@ -1,13 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Base from '../views/Base.vue'
 import Versus from '../views/Versus.vue'
 
 const routes = [
   {
     path: '',
-    component: Home,
+    component: Base,
     children: [
+      {
+        path: '/',
+        name: 'Home',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: Home,
+        children: [],
+      },
       {
         path: 'vs',
         name: 'Versus',
@@ -44,6 +54,13 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
 })
 
 export default router
