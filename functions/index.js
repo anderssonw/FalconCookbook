@@ -56,6 +56,11 @@ app.get("/api/categories/:category/guides", async (req, res) => {
     guides.forEach((doc) => {
       out.push({ id: doc.id, data: doc.data() });
     });
+
+    out = out.sort((a, b) => {
+      return a.data.guideOrder - b.data.guideOrder;
+    });
+
     res.status(200).json(out);
   }
 });
@@ -75,6 +80,7 @@ app.get("/api/categories/:character/:fundamental", async (req, res) => {
     categories.forEach((doc) => {
       out.push({ id: doc.id, data: doc.data() });
     });
+
     res.status(200).json(out);
   }
 });

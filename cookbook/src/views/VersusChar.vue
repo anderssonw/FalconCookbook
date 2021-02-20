@@ -1,31 +1,23 @@
 <template>
   <v-card tile class="red">
-    <v-card-title>Versus {{ $route.params.character }}</v-card-title>
     <v-container>
       <v-row>
-        <v-col class="neutral">
-          <v-card color="green" hover v-on:click="fundamentalCardClick(`neutral`)">
-            <v-card-title> Neutral </v-card-title>
-            <v-icon> mdi-brain </v-icon>
-          </v-card>
-        </v-col>
-        <v-col style="display: inline" class="punish">
-          <v-card color="red" hover v-on:click="fundamentalCardClick(`punish`)">
-            <v-card-title> Punish </v-card-title>
-            <v-icon> mdi-sword </v-icon>
-          </v-card>
-        </v-col>
-        <v-col class="defense">
-          <v-card color="blue" hover v-on:click="fundamentalCardClick(`defense`)">
-            <v-card-title> Defense </v-card-title>
-            <v-icon> mdi-shield </v-icon>
-          </v-card>
-        </v-col>
-        <v-col class="edgeguards">
-          <v-card color="orange" :hover="true" v-on:click="fundamentalCardClick(`edgeguards`)">
-            <v-card-title> Edgeguards </v-card-title>
-            <v-icon> mdi-content-save </v-icon>
-          </v-card>
+        <v-col class="vs-text"> VERSUS {{ $route.params.character.toUpperCase() }} </v-col>
+      </v-row>
+      <v-row class="pa-4" justify="space-around">
+        <v-col
+          v-for="vsButton in vsButtons"
+          :class="vsButton.color"
+          class="vs-btn-text ma-3"
+          :key="vsButton.text"
+          hover
+          v-on:click="fundamentalCardClick(vsButton.text.toLowerCase())"
+        >
+          <v-row>
+            <v-col>
+              {{ vsButton.text }}
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
@@ -34,7 +26,30 @@
 
 <script>
 export default {
-  data: () => ({}),
+  data: () => ({
+    vsButtons: [
+      {
+        text: 'NEUTRAL',
+        color: 'green',
+        icon: 'mdi-brain',
+      },
+      {
+        text: 'PUNISH',
+        color: 'purple',
+        icon: 'mdi-sword',
+      },
+      {
+        text: 'DEFENCE',
+        color: 'blue',
+        icon: 'mdi-shield',
+      },
+      {
+        text: 'EDGEGUARD',
+        color: 'orange',
+        icon: 'mdi-block',
+      },
+    ],
+  }),
 
   methods: {
     fundamentalCardClick(e) {
@@ -47,4 +62,27 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+.vs-text {
+  color: #d3a40f;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 0px 4px 1px black;
+}
+
+.vs-btn-text {
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow: 0px 4px 1px black;
+  border-radius: 25px;
+}
+
+.vs-btn-text:hover {
+  cursor: pointer;
+}
+</style>
