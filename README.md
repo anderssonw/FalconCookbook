@@ -1,21 +1,33 @@
-# cookbook
+# Captain Falcon Cookbook
 
-## Front end setup
+## Setup
+
+### Requirements
+
+* node >=14
+* firebase cli
+
+### Front end setup
 ```
+cd cookbook
 npm install
 ```
-
-### Compiles and hot-reloads for development
+For development:
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+For build:
 ```
 npm run build
 ```
+### Back end setup
+* Your google account need access to the firebase console. DM Gabe#0042 on discord to ask for access.
 
-### Lints and fixes files
+For development:
 ```
-npm run lint
+firebase emulators:start --only functions
+```
+For deployment:
+```
+firebase deploy --only functions
 ```
