@@ -4,7 +4,7 @@
       <span class="cptfalcon text mb-n3">the captain falcon</span>
       <span class="text mt-n3">cookbook</span>
     </span>
-      <p class="text flex-grow-1 d-none d-md-flex d-lg-flex d-xl-none">ginga gonga</p>
+      <p class="text flex-grow-1 d-none d-md-flex d-lg-flex d-xl-none logo">ginga gonga</p>
   </header>
 </template>
 
@@ -33,8 +33,12 @@ export default {
   font-style: italic;
 }
 
-.text:hover {
+.cook-holder:hover {
   cursor: pointer;
+}
+
+.logo {
+  cursor: default;
 }
 
 .cptfalcon {
@@ -43,10 +47,5 @@ export default {
 
 .cookbook {
   font-size: 3rem;
-}
-
-.logo {
-  color: #d3a40f;
-  font-size: 3em;
 }
 </style>
