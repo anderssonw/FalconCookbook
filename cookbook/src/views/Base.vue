@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="">
     <Toolbar />
-    <div class="content pt-4 pb-12 mb-12 mx-12 blue">
+    <div class="blue">
       <Menu />
       <router-view />
     </div>
@@ -21,9 +21,4 @@ export default {
   },
 }
 </script>
-<style>
-.content {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-</style>
+<style></style>

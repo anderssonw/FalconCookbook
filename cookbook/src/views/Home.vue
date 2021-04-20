@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <!-- <v-container class="">
     <v-row>
       <v-col class="red text" cols="7">
         Welcome to the Captain Falcon Cookbook!
@@ -16,7 +16,8 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
+  </v-container> -->
+  <p>blank</p>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="">
     <v-main class="main_orange">
       <router-view />
     </v-main>
@@ -17,4 +17,10 @@ export default {
   }),
 }
 </script>
-<style></style>
+<style>
+
+  .ugh {
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
