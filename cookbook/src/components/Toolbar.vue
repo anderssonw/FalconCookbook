@@ -23,10 +23,6 @@ export default {
 </script>
 
 <style>
-.header {
-  width: 1vw;
-  height: 100px;
-}
 .text {
   color: #d3a40f;
   font-weight: bold;
