@@ -17,10 +17,4 @@ export default {
   }),
 }
 </script>
-<style>
-
-  .ugh {
-    width: 100vw;
-    height: 100vh;
-  }
-</style>
+<style></style>

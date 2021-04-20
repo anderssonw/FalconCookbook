@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style scoped>
+
 .discords {
   line-height: 1;
   color: #d3a40f;
@@ -41,7 +42,6 @@ export default {
 .title {
   font-size: 1.5em;
 }
-
 
 .discords>p {
   font-size: 2rem;
