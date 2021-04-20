@@ -3,8 +3,8 @@
     <Toolbar />
     <div class="blue">
       <Menu />
-      <router-view />
     </div>
+      <router-view />
   </div>
 </template>
 

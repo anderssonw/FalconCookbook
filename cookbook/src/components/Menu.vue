@@ -1,5 +1,5 @@
 <template>
-  <ul class="pb-4 px-0 menu">
+  <ul class="menu">
     <router-link tag="li" class="menu-ref" v-for="route in menuRoutes" v-bind:key="route.text" :to="route.link">
       {{ route.text }}
     </router-link>
@@ -45,6 +45,8 @@ export default {
 
 .menu {
   display: flex;
+  flex-direction:column;
+  /* align-items: center; */
   justify-content: space-between;
 }
 
