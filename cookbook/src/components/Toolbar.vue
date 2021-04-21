@@ -1,17 +1,11 @@
 <template>
-  <div class="red pa-0 my-8">
-    <v-container fluid class="pa-0 ">
-      <v-row class="ma-0 pl-12">
-        <v-col v-on:click="sendHome" class="home pa-0">
-          <v-row class="ma-0 pa-0"><v-col class="cptfalcon text pa-0 mb-n3">THE CAPTAIN FALCON</v-col></v-row>
-          <v-row class="ma-0 pa-0"><v-col class="cookbook text pa-0 my-n3">COOKBOOK</v-col></v-row>
-        </v-col>
-        <v-col class="logo pa-0" yellow>
-          GINGA GONGA
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <header class="cookbook text-uppercase red my-8 pa-1 d-flex justify-space-between align-center">
+    <span v-on:click="sendHome" class="cook-holder d-flex mx-2 flex-column flex-grow-1">
+      <span class="cptfalcon text mb-n3">the captain falcon</span>
+      <span class="text mt-n3">cookbook</span>
+    </span>
+      <p class="text flex-grow-1 d-none d-md-flex d-lg-flex d-xl-none logo">ginga gonga</p>
+  </header>
 </template>
 
 <script>
@@ -35,20 +29,19 @@ export default {
   font-style: italic;
 }
 
-.text:hover {
+.cook-holder:hover {
   cursor: pointer;
 }
 
+.logo {
+  cursor: default;
+}
+
 .cptfalcon {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .cookbook {
-  font-size: 3em;
-}
-
-.logo {
-  color: #d3a40f;
-  font-size: 3em;
+  font-size: 3rem;
 }
 </style>

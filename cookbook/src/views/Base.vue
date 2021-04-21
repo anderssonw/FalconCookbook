@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="">
     <Toolbar />
-    <div class="content pt-4 pb-12 mb-12 mx-12 blue">
-      <Menu />
-      <router-view />
+    <div class="route-holder d-md-flex">
+      <div class="blue pr-4 flex-grow-0">
+        <Menu />
+      </div>
+      <router-view class="flex-grow-1" />
     </div>
   </div>
 </template>
@@ -21,9 +23,4 @@ export default {
   },
 }
 </script>
-<style>
-.content {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-</style>
+<style></style>

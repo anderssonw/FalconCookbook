@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="">
     <v-main class="main_orange">
       <router-view />
     </v-main>
