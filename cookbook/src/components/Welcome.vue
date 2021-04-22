@@ -73,12 +73,11 @@ export default {
 #welcome .discord {
   font-family: courier;
   font-weight: normal;
-  font-size: 12px;
   background: var(--bg);
   flex-grow: 1;
-  height: 24px;
   border: 1px solid #c6c6c6;
-  padding-top: 13px;
+  font-size: 1.1rem;
+  padding: 1rem;
 }
 
 a {
