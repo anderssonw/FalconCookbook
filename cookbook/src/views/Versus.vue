@@ -26,40 +26,40 @@ export default {
   components: {
     Character,
   },
-  methods: {
-    onCharacterButtonClick(character) {
-      this.$router.push({
-        name: 'VersusChar',
-        params: { character: character.id },
-      })
-    },
+  // methods: {
+  //   onCharacterButtonClick(character) {
+  //     this.$router.push({
+  //       name: 'VersusChar',
+  //       params: { character: character.id },
+  //     })
+  //   },
 
-    getCharRow(index) {
-      if (index == 1) {
-        return this.characters.slice(0, 9)
-      } else if (index == 2) {
-        return this.characters.slice(9, 18)
-      } else {
-        return this.characters.slice(18, 26)
-      }
-    },
-  },
+  //   getCharRow(index) {
+  //     if (index == 1) {
+  //       return this.characters.slice(0, 9)
+  //     } else if (index == 2) {
+  //       return this.characters.slice(9, 18)
+  //     } else {
+  //       return this.characters.slice(18, 26)
+  //     }
+  //   },
+  // },
 
-  created() {
-    CharacterAPI.getAllCharacters().then((res) => {
-      this.characters = res.data
+  // created() {
+  //   CharacterAPI.getAllCharacters().then((res) => {
+  //     this.characters = res.data
 
-      this.loading = false
-    })
-  },
+  //     this.loading = false
+  //   })
+  // },
 }
 </script>
 
 <style>
 .chars {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
 }
 
 .char-button {

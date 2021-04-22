@@ -6,7 +6,6 @@
 
 <script>
 import Welcome from '@/components/Welcome.vue'
-import MenuCircle from '@/components/MenuCircle.vue'
 
 export default {
   data: () => ({

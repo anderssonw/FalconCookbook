@@ -10,10 +10,15 @@ export default {
     link: String,
     img: String,
   },
+  data() {
+    return {
+      imgPath: require(`@/assets/characters/${this.img}`)
+    }
+  },
   computed: {
     style() {
       return {
-          '--imgurl': `url("src/assets/characters/${this.img}")`,
+          '--imgurl': `url(${this.imgPath})`,
       }
     },
   },
@@ -32,8 +37,8 @@ div {
   height: 200px;
   width: 130px;
   background:  #eeeeee var(--imgurl) no-repeat !important;
-  margin-right: 10px;
-  margin-left: 10px;
+  /* margin-right: 10px;
+  margin-left: 10px; */
 }
 
 a:hover {
