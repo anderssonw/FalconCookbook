@@ -1,31 +1,31 @@
 <template>
-  <!--
-  <v-container class="pa-4 ma-0 red">
-    <v-row class="py-2" v-for="n in 3" :key="n" justify="space-between">
-      <v-col v-for="char in getCharRow(n)" v-bind:key="char.id" class="char-button py-0 mx-3" align="center">
-        <img width="92" class="pa-6" v-on:click="onCharacterButtonClick(char)" :src="char.data.iconSrc" />
-      </v-col>
-    </v-row>
-  </v-container>
-  -->
-  <div class="red py-4 vs-container">
+  <!-- <div class="red py-4 vs-container">
     <ul class="py-2 px-3 vs-row" v-for="n in 3" :key="n">
       <li v-for="char in getCharRow(n)" v-bind:key="char.id" class="char-button py-0 mx-3" align="center">
         <img class="char-img ma-6" v-on:click="onCharacterButtonClick(char)" :src="char.data.iconSrc" />
       </li>
     </ul>
-  </div>
+  </div> -->
+  <span class="chars">
+    <Character v-for="char in characters" :key="char.name" :link="char.url" :img="char.img" />
+  </span>
+
 </template>
 
 <script>
-import characters from '../api/characters'
-import CharacterAPI from '../api/characters'
+// import characters from '../api/characters'
+// import CharacterAPI from '../api/characters'
+import Character from '@/components/Character.vue'
+import characters from '@/assets/characters.json'
+
 export default {
   data: () => ({
-    characters: [],
+    characters,
     loading: true,
   }),
-
+  components: {
+    Character,
+  },
   methods: {
     onCharacterButtonClick(character) {
       this.$router.push({
@@ -56,6 +56,12 @@ export default {
 </script>
 
 <style>
+.chars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
 .char-button {
   box-shadow: inset 1px 1px 7px 1px;
   background: rgba(0, 50, 43, 0.3);

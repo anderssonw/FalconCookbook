@@ -1,26 +1,50 @@
 <template>
-  <div class="">
-    <Toolbar />
-    <div class="route-holder d-md-flex">
-      <div class="blue pr-4 flex-grow-0">
-        <Menu />
-      </div>
+  <div class="whole d-flex flex-column align-center">
+      <Logo />
+      <span class="menu d-flex">
+        <MenuCircle v-for="menu in menus" :key="menu.text" :text="menu.text" :link="menu.link"/>
+      </span>
       <router-view class="flex-grow-1" />
     </div>
-  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Toolbar from '@/components/Toolbar.vue'
-import Menu from '../components/Menu.vue'
+import Logo from '@/components/Logo.vue'
+import MenuCircle from '@/components/MenuCircle.vue'
 
 export default {
   name: 'Base',
   components: {
-    Toolbar,
-    Menu,
+    Logo,
+    MenuCircle,
   },
+  data() {
+    return {
+      menus: [
+      {
+        text: 'main page',
+        link: '/'
+      },
+      {
+        text: 'general guides',
+        link: '/'
+      },
+      {
+        text: 'matchup guides',
+        link: '/vs'
+      },
+    ],
+
+    }
+  }
 }
 </script>
-<style></style>
+<style>
+  .whole {
+    margin-top: 60px;
+  }
+  .menu {
+    margin-bottom: 20px;
+  }
+</style>
