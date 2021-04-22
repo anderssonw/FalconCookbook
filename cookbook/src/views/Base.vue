@@ -43,6 +43,7 @@ export default {
 <style>
   .whole {
     margin-top: 60px;
+    margin-bottom: 60px;
   }
   .menu {
     margin-bottom: 20px;

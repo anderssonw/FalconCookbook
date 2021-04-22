@@ -77,7 +77,7 @@ export default {
   flex-grow: 1;
   border: 1px solid #c6c6c6;
   font-size: 1.1rem;
-  padding: 1rem;
+  padding: .6rem;
 }
 
 a {
