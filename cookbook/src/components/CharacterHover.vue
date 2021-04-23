@@ -1,14 +1,18 @@
 <template>
-    <router-link :style="style" :to="{name: 'VersusChar', params: {character: name}}" class="a" />
+    <character :name="name"  :img="img" />
 </template>
 
 <script>
+import Character from '@/components/Character'
+
 export default {
   setup() {},
+  components: {
+      Character
+  },
   props: {
-    link: String,
-    img: String,
-    name: String,
+      name: String,
+      img: String
   },
   data() {
     return {
@@ -27,11 +31,11 @@ export default {
 <style scoped>
 
 a {
-  border-radius: 0px !important;
-  height: 200px;
-  width: 130px;
-  background:  #eeeeee var(--imgurl) no-repeat !important;
-  pointer-events: none;
+    pointer-events: auto;
+}
+
+a:hover {
+  background: #cb5464 var(--imgurl) no-repeat !important;
 }
 
 </style>

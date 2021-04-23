@@ -1,49 +1,58 @@
 <template>
-  <div class="text-uppercase versus red">
-    <p class="vs-text">
-        versus {{  $route.params.character }}
-    </p>
-    <span class="options d-flex">
-      <p 
-        class="vs-btn ma-3" 
-        :class="vsButton.color"
-        v-on:click="fundamentalCardClick(vsButton.text)" 
-        v-for="vsButton in vsButtons" 
-        :key="vsButton.text">
-            {{vsButton.text}}
-        </p>
-    </span>
-
+  <div class="everything d-flex flex-column align-center">
+    <div class="text-uppercase versus red">
+      <p class="vs-text">
+          versus {{ name }}
+      </p>
+      <span class="options d-flex">
+        <p 
+          class="vs-btn ma-3" 
+          :class="vsButton.color"
+          v-on:click="fundamentalCardClick(vsButton.text)" 
+          v-for="vsButton in vsButtons" 
+          :key="vsButton.text">
+              {{vsButton.text}}
+          </p>
+      </span>
+    </div>
+    <character-intro :name="name"/>
   </div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    vsButtons: [
-      {
-        text: 'neutral',
-        color: 'green',
-        icon: 'mdi-brain',
-      },
-      {
-        text: 'punish',
-        color: 'purple',
-        icon: 'mdi-sword',
-      },
-      {
-        text: 'defense',
-        color: 'blue',
-        icon: 'mdi-shield',
-      },
-      {
-        text: 'edgeguard',
-        color: 'orange',
-        icon: 'mdi-block',
-      },
-    ],
-  }),
+import CharacterIntro from '@/components/CharacterIntro.vue'
 
+export default {
+  data() {
+    return {
+      name: this.$route.params.character,
+      vsButtons: [
+        {
+          text: 'neutral',
+          color: 'green',
+          icon: 'mdi-brain',
+        },
+        {
+          text: 'punish',
+          color: 'purple',
+          icon: 'mdi-sword',
+        },
+        {
+          text: 'defense',
+          color: 'blue',
+          icon: 'mdi-shield',
+        },
+        {
+          text: 'edgeguard',
+          color: 'orange',
+          icon: 'mdi-block',
+        },
+      ],
+    }
+  },
+  components: {
+    CharacterIntro
+  },
   methods: {
     fundamentalCardClick(e) {
       this.$router.push({
@@ -56,6 +65,11 @@ export default {
 </script>
 
 <style>
+
+.versus {
+  width:fit-content;
+}
+
 .vs-text {
   color: #d3a40f;
   font-weight: bold;

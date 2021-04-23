@@ -1,6 +1,6 @@
 <template>
   <span class="chars">
-    <Character v-for="char in characters" :key="char.name" :name="char.name" :link="char.url" :img="char.img" />
+    <character-hover v-for="char in characters" :key="char.name" :name="char.name" :link="char.url" :img="char.img" />
   </span>
 
 </template>
@@ -8,7 +8,7 @@
 <script>
 // import characters from '../api/characters'
 // import CharacterAPI from '../api/characters'
-import Character from '@/components/Character.vue'
+import CharacterHover from '@/components/CharacterHover.vue'
 import characters from '@/assets/characters.json'
 
 export default {
@@ -17,7 +17,7 @@ export default {
     loading: true,
   }),
   components: {
-    Character,
+    CharacterHover
   },
   // methods: {
   //   onCharacterButtonClick(character) {
