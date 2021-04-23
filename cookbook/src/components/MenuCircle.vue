@@ -1,6 +1,5 @@
 <template>
-    <!-- <a class="text-uppercase" @click="active = !active" @click.prevent v-bind:class="{active:active}" href="">{{ text }}</a> -->
-    <router-link :to="link" class="a text-uppercase" @click="active = !active" @click.prevent v-bind:class="{active:active}" href="">
+    <router-link :to="link" class="a text-uppercase" @click="active = !active" v-bind:class="{active:active}">
         {{text}}
     </router-link>
 </template>
