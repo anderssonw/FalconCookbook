@@ -1,27 +1,20 @@
 <template>
-  <v-card tile class="red">
-    <v-container>
-      <v-row>
-        <v-col class="vs-text"> VERSUS {{ $route.params.character.toUpperCase() }} </v-col>
-      </v-row>
-      <v-row class="pa-4" justify="space-around">
-        <v-col
-          v-for="vsButton in vsButtons"
-          :class="vsButton.color"
-          class="vs-btn-text ma-3"
-          :key="vsButton.text"
-          hover
-          v-on:click="fundamentalCardClick(vsButton.text.toLowerCase())"
-        >
-          <v-row>
-            <v-col>
-              {{ vsButton.text }}
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+  <div class="text-uppercase versus red">
+    <p class="vs-text">
+        versus {{  $route.params.character }}
+    </p>
+    <span class="options d-flex">
+      <p 
+        class="vs-btn ma-3" 
+        :class="vsButton.color"
+        v-on:click="fundamentalCardClick(vsButton.text)" 
+        v-for="vsButton in vsButtons" 
+        :key="vsButton.text">
+            {{vsButton.text}}
+        </p>
+    </span>
+
+  </div>
 </template>
 
 <script>
@@ -29,22 +22,22 @@ export default {
   data: () => ({
     vsButtons: [
       {
-        text: 'NEUTRAL',
+        text: 'neutral',
         color: 'green',
         icon: 'mdi-brain',
       },
       {
-        text: 'PUNISH',
+        text: 'punish',
         color: 'purple',
         icon: 'mdi-sword',
       },
       {
-        text: 'DEFENCE',
+        text: 'defense',
         color: 'blue',
         icon: 'mdi-shield',
       },
       {
-        text: 'EDGEGUARD',
+        text: 'edgeguard',
         color: 'orange',
         icon: 'mdi-block',
       },
@@ -72,7 +65,7 @@ export default {
   text-shadow: 0px 4px 1px black;
 }
 
-.vs-btn-text {
+.vs-btn{
   color: white;
   font-weight: bold;
   font-style: italic;
@@ -80,9 +73,10 @@ export default {
   text-align: center;
   text-shadow: 0px 4px 1px black;
   border-radius: 25px;
+  padding: 10px;
 }
 
-.vs-btn-text:hover {
+.vs-btn:hover {
   cursor: pointer;
 }
 </style>
