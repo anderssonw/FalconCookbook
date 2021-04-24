@@ -1,5 +1,8 @@
 <template>
-    <router-link :to="link" class="a text-uppercase" @click="active = !active" v-bind:class="{active:active}">
+    <router-link 
+    :to="link" 
+    class="a text-uppercase" 
+    :class="{active:active}">
         {{text}}
     </router-link>
 </template>
@@ -7,16 +10,28 @@
 <script>
 export default {
   name: 'MenuCircle',
-  setup(props) {},
   props: {
     text: String,
     link: String,
-  },
+   },
   data() {
-      return {
-          active: false,
+      return { 
+        active: false
       }
   },
+  methods: {
+    set_active: function() {
+      this.active = this.$router.currentRoute.path === this.link
+    }
+  },
+  created: function() {
+      this.set_active()
+  },
+  watch: {
+    $route (to, from) {
+      this.set_active()
+    }
+  }
 };
 </script>
 
