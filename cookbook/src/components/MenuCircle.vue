@@ -21,13 +21,17 @@ export default {
   },
   methods: {
     set_active: function() {
-      this.active = this.$router.currentRoute.path === this.link
+      //catches sub routes to keep menus highlighted
+      this.active = this.$route.fullPath.split('/').slice(1)
+      .some(crumb => crumb === this.link.slice(1) )
     }
   },
   created: function() {
+    //runs on component creation since the route watcher isn't working yet
       this.set_active()
   },
   watch: {
+    //covers route changes after initial load
     $route (to, from) {
       this.set_active()
     }
