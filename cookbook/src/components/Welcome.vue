@@ -14,20 +14,31 @@
         <h4 class="discord-img"></h4>
         <h5 @click="copy" class="discord"><a href="https://discord.gg/azthzrj">https://discord.gg/azthzrj</a></h5>
     </div>
-    <v-alert class="alert hidden" type="success">link copied!</v-alert>
+    <v-snackbar
+      v-model="snacker.seen"
+      :timeout="snacker.timeout"
+      color="success"
+    >
+      {{snacker.text}}
+    </v-snackbar>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Welcome',
+  data: function() {
+    return {
+      snacker: {
+        seen: false,
+        timeout: 1000,
+        text: "link copied!"
+      },
+    }
+  },
   methods: {
     copy: function(e) {
-      let alert = document.querySelector('.alert')
-      alert.classList.remove('hidden')
-      setTimeout(() => {
-        alert.classList.add('hidden')
-      }, 1000)
+      this.snacker.seen = true
       navigator.clipboard.writeText(e.target.innerText)
     }
   }
