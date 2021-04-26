@@ -3,12 +3,22 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Base from '../views/Base.vue'
 import Versus from '../views/Versus.vue'
+import Playground from '../views/Playground.vue'
 
 const routes = [
   {
     path: '',
     component: Base,
     children: [
+      {
+        path: '/playground',
+        name: 'Playground',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: Playground,
+        children: [],
+      },
       {
         path: '/',
         name: 'Home',

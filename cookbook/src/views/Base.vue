@@ -27,8 +27,9 @@ export default {
         link: '/'
       },
       {
-        text: 'general guides',
-        link: '/'
+        // text: 'general guides',
+        text: 'testing',
+        link: '/playground'
       },
       {
         text: 'matchup guides',
