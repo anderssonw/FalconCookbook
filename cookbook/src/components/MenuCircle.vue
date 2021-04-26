@@ -54,10 +54,10 @@ export default {
   margin-right: 10px;
   margin-left: 10px;
   font-family: arial;
-  text-decoration: none;
   font-weight: 800;
   font-size: 28px;
   text-align:center;
+  word-wrap:break-word;
 }
 
 .a:hover {
