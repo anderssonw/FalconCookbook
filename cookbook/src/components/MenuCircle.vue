@@ -41,23 +41,28 @@ export default {
 
 <style scoped>
 .a {
+  overflow:hidden;
+  word-wrap:break-word;
+
   display: flex;
   justify-content: center;
   align-items:center;
-  text-decoration: none;
+  text-align:center;
+
   color: #dddddd;
   background: #c6c6c6;
+
   border-radius: 80px;
-  line-height: 28px;
-  width: 160px;
-  height: 160px;
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 9rem;
+  height: 9rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+
+  text-decoration: none;
   font-family: arial;
   font-weight: 800;
-  font-size: 28px;
-  text-align:center;
-  word-wrap:break-word;
+  line-height: 1.7rem;
+  font-size: 1.7rem;
 }
 
 .a:hover {

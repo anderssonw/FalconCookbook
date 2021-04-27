@@ -6,4 +6,5 @@ export default {
   red: '#c12b2b',
   blue: '#2f3875',
   dark_red: '#8c2b2b',
+  discord: '#7289da',
 }

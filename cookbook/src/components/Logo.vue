@@ -3,7 +3,7 @@
   <v-img
     class="logo"
     src="../assets/logo.png"
-    max-widt="100%"
+    max-width="100%"
   />
 
 </template>

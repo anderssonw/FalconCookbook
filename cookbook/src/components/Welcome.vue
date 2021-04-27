@@ -1,6 +1,6 @@
 <template>
-  <div id="welcome">
-    <div class="welcome-holder">
+  <div id="welcome" class="d-flex flex-column">
+    <div class="welcome-holder d-flex flex-column align-center ">
         <h2 class="banner">SHOW ME YOUR MOVES!</h2>
         <p>
         This paragraph will describe what you can find on this website and how to
@@ -10,9 +10,21 @@
         invite is clickable as a hyperlink.
         </p>
     </div>
-    <div class="discord-holder">
-        <h4 class="discord-img"></h4>
-        <h5 @click="copy" class="discord"><a href="https://discord.gg/azthzrj">https://discord.gg/azthzrj</a></h5>
+    <div class="discord-holder d-flex align-center justify-flex-start">
+      <a target="_blank" href="https://discord.gg/azthzrj">
+        <v-img
+        src="../assets/discord.png"
+        class="discord-img flex-grow-0 mr-5" 
+        />
+      </a>
+        <v-btn 
+        @click="copy"
+        class="discord"
+        elevation="1"
+        color="discord"
+        >
+          copy link
+        </v-btn>
     </div>
     <v-snackbar
       v-model="snacker.seen"
@@ -47,30 +59,18 @@ export default {
 
 <style scoped>
 
-.hidden {
-  opacity: 0;
-  /* display: none; */
-}
 #welcome {
-    width:fit-content;
     --bg:#eeeeee;
     font-family: arial;
     font-weight: normal;
+    width: 60%;
+    margin:auto;
 }
 
-.discord-holder {
-    display: flex;
-    align-items:center;
-    justify-content: flex-start;
-}
 
 .welcome-holder {
   background: var(--bg);
   border: 1px solid #c6c6c6;
-  width: 500px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
   padding: 10px;
   margin-bottom: 5px;
 }
@@ -82,35 +82,18 @@ export default {
 }
 
 
-#welcome p {
+p {
   font-size: .75rem;
   line-height: 20px;
   color: #444444;
 }
 
-#welcome .discord-img {
-  background: url("../assets/discord.png") no-repeat;
-  width: 47px;
-  height: 54px;
-  margin-right: 10px;
-}
-
-#welcome .discord {
-  font-family: courier;
-  font-weight: normal;
-  background: var(--bg);
+.discord {
+  font-weight: bold;
   flex-grow: 1;
-  border: 1px solid #c6c6c6;
   font-size: 1.1rem;
   padding: .6rem;
-  cursor:pointer;
-}
-
-a {
-  color: #444444 !important;
-}
-
-a:hover {
-  color: #cb5464 !important;
+  overflow:hidden;
+  color: white !important;
 }
 </style>

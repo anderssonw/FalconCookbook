@@ -26,15 +26,15 @@ export default {
         text: 'main page',
         link: '/'
       },
-      {
-        // text: 'general guides',
-        text: 'testing',
-        link: '/playground'
-      },
-      {
-        text: 'matchup guides',
-        link: '/vs'
-      },
+      // {
+      //   // text: 'general guides',
+      //   text: 'testing',
+      //   link: '/playground'
+      // },
+      // {
+      //   text: 'matchup guides',
+      //   link: '/vs'
+      // },
     ],
 
     }
@@ -43,7 +43,8 @@ export default {
 </script>
 <style>
   .whole {
-    margin-top: 60px;
+    /* margin-top: 60px; */
+    padding-top: 20px;
     margin-bottom: 60px;
   }
   .menu {
