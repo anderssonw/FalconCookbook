@@ -28,14 +28,13 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 
 a {
     pointer-events: auto;
-}
-
-a:hover {
-  background: #cb5464 var(--imgurl) no-repeat !important;
+    &:hover {
+      background: #cb5464 var(--imgurl) no-repeat !important;
+    }
 }
 
 </style>

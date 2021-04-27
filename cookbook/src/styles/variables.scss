@@ -10,8 +10,15 @@ $body-font-family: 'Kanit';
     }
 }
 
-@mixin mq-max($breakpoint) {
-    @media (max-width: $breakpoint) {
-        @content;
-    }
+@mixin menu-dimensions($dim, $font) {
+    height: $dim;
+    width: $dim;
+    font-size: $font;
+    line-height: $font;
+}
+
+@mixin itboldcenter {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
 }

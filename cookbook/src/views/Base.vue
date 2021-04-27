@@ -41,12 +41,22 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
   .whole {
     padding-top: 20px;
     margin-bottom: 60px;
   }
   .menu {
     margin-bottom: 20px;
+  }
+
+  .menu-circle {
+    @include menu-dimensions(100px, 18px)
+  }
+
+  @include mq-min(600px) {
+    .menu-circle {
+      @include menu-dimensions(160px, 25px)
+    }
   }
 </style>

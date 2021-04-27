@@ -1,7 +1,7 @@
 <template>
     <router-link 
     :to="link" 
-    class="a text-uppercase rounded-circle" 
+    class="menu-circle a text-uppercase rounded-circle" 
     :class="{active:active}">
         {{text}}
     </router-link>
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .a {
   overflow:hidden;
   word-wrap:break-word;
@@ -53,21 +53,20 @@ export default {
   background: #c6c6c6;
 
   /* border-radius: 80px; */
-  width: 9rem;
-  height: 9rem;
+  /* width: 9rem;
+  height: 9rem; */
   margin-right: .5rem;
   margin-left: .5rem;
 
   text-decoration: none;
   font-family: arial;
   font-weight: 800;
-  line-height: 1.7rem;
-  font-size: 1.7rem;
-}
-
-.a:hover {
-  color: #fefefe;
-  background: #cb5464 !important;
+  /* line-height: 1.7rem;
+  font-size: 1.7rem; */
+  &:hover {
+    color: #fefefe;
+    background: #cb5464 !important;
+  }
 }
 
 .active {

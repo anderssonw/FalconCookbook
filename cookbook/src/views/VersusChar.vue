@@ -64,33 +64,25 @@ export default {
 }
 </script>
 
-<style>
-
-.versus {
-  width:fit-content;
-}
+<style lang="scss" scope>
 
 .vs-text {
+  @include itboldcenter;
   color: #d3a40f;
-  font-weight: bold;
-  font-style: italic;
   font-size: 3em;
-  text-align: center;
   text-shadow: 0px 4px 1px black;
 }
 
 .vs-btn{
+  @include itboldcenter;
   color: white;
-  font-weight: bold;
-  font-style: italic;
   font-size: 1.5em;
-  text-align: center;
   text-shadow: 0px 4px 1px black;
   border-radius: 25px;
   padding: 10px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.vs-btn:hover {
-  cursor: pointer;
-}
 </style>

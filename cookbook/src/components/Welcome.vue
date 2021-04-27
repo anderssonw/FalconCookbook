@@ -64,7 +64,7 @@ export default {
 #welcome {
     font-family: arial;
     font-weight: normal;
-    width: 60%;
+    width: 70%;
     margin:auto;
 }
 
@@ -96,5 +96,10 @@ p {
   padding: .6rem;
   overflow:hidden;
   color: white !important;
+}
+@include mq-min(1000px) {
+  #welcome {
+    width:40%;
+  }
 }
 </style>
