@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .chars {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -59,6 +59,9 @@ export default {
   box-shadow: inset 1px 1px 7px 1px;
   background: rgba(0, 50, 43, 0.3);
   list-style-type: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .char-img {
@@ -66,21 +69,18 @@ export default {
   filter: drop-shadow(2px 2px 3px black);
 }
 
-.char-button:hover {
-  cursor: pointer;
-}
-
-@media all and (min-width:574px) {
+@include mq-min(574px) {
   .chars {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
-@media all and (min-width:774px) {
+@include mq-min(774px) {
   .chars {
     grid-template-columns: repeat(4, 1fr) !important;
   }
 }
-@media all and (min-width:900px) {
+
+@include mq-min(900px) {
   .chars {
     grid-template-columns: repeat(5, 1fr) !important;
   }

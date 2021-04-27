@@ -11,7 +11,7 @@
         </p>
     </div>
     <div class="discord-holder d-flex align-center justify-flex-start">
-      <a target="_blank" href="https://discord.gg/azthzrj">
+      <a target="_blank" :href="discord_url">
         <v-img
         src="../assets/discord.png"
         class="discord-img flex-grow-0 mr-5" 
@@ -46,21 +46,22 @@ export default {
         timeout: 1000,
         text: "link copied!"
       },
+      discord_url:"https://discord.gg/azthzrj",
     }
   },
   methods: {
     copy: function(e) {
       this.snacker.seen = true
-      navigator.clipboard.writeText(e.target.innerText)
+      navigator.clipboard.writeText(this.discord_url)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  $bg:#eeeeee;
 
 #welcome {
-    --bg:#eeeeee;
     font-family: arial;
     font-weight: normal;
     width: 60%;
@@ -69,7 +70,7 @@ export default {
 
 
 .welcome-holder {
-  background: var(--bg);
+  background: $bg;
   border: 1px solid #c6c6c6;
   padding: 10px;
   margin-bottom: 5px;

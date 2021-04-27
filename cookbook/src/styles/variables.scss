@@ -3,3 +3,15 @@
 $body-font-family: 'Kanit';
 
 @import '~vuetify/src/styles/styles.sass';
+
+@mixin mq-min($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin mq-max($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
