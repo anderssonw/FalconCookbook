@@ -1,5 +1,5 @@
 <template>
-  <v-app class="">
+  <v-app class="app">
     <v-main class="gray_bg">
       <router-view />
     </v-main>
@@ -17,4 +17,8 @@ export default {
   }),
 }
 </script>
-<style></style>
+<style>
+  .app {
+    overflow:hidden !important;
+  }
+</style>

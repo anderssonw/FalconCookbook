@@ -1,7 +1,7 @@
 <template>
   <div class="whole d-flex flex-column align-center">
       <Logo />
-      <span class="menu d-flex">
+      <span class="menu d-flex flex-wrap justify-center">
         <MenuCircle v-for="menu in menus" :key="menu.text" :text="menu.text" :link="menu.link"/>
       </span>
       <router-view class="flex-grow-1" />
@@ -26,15 +26,15 @@ export default {
         text: 'main page',
         link: '/'
       },
-      // {
-      //   // text: 'general guides',
-      //   text: 'testing',
-      //   link: '/playground'
-      // },
-      // {
-      //   text: 'matchup guides',
-      //   link: '/vs'
-      // },
+      {
+        // text: 'general guides',
+        text: 'testing',
+        link: '/playground'
+      },
+      {
+        text: 'matchup guides',
+        link: '/vs'
+      },
     ],
 
     }
@@ -43,7 +43,6 @@ export default {
 </script>
 <style>
   .whole {
-    /* margin-top: 60px; */
     padding-top: 20px;
     margin-bottom: 60px;
   }

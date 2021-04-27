@@ -1,7 +1,7 @@
 <template>
     <router-link 
     :to="link" 
-    class="a text-uppercase" 
+    class="a text-uppercase rounded-circle" 
     :class="{active:active}">
         {{text}}
     </router-link>
@@ -52,7 +52,7 @@ export default {
   color: #dddddd;
   background: #c6c6c6;
 
-  border-radius: 80px;
+  /* border-radius: 80px; */
   width: 9rem;
   height: 9rem;
   margin-right: .5rem;
