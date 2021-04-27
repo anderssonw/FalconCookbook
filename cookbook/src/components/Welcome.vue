@@ -68,8 +68,8 @@ export default {
 
 
 .welcome-holder {
+  @include border;
   background: $bg-text;
-  border: 1px solid #c6c6c6;
   padding: 10px;
   margin-bottom: 5px;
 }
@@ -95,6 +95,7 @@ p {
   overflow:hidden;
   color: white !important;
 }
+
 @include mq-min(1000px) {
   #welcome {
     width:40%;
