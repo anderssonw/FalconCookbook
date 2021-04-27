@@ -1,12 +1,15 @@
 <template>
-  <div class="char-base">
-    <character class="character" :name="name" :img="name + '.png'"/>
-    <div class="intro-menu">
-      {{text}}
-      <div class="menu d-flex flex-wrap justify-center">
-        <MenuCircle v-for="menu in menus" :key="menu.text" :text="menu.text" :link="menu.text" />
+  <div class="whole d-flex flex-column align-center">
+    <div class="char-base">
+      <character class="character" :name="name" :img="name + '.png'"/>
+      <div class="intro-menu">
+        {{text}}
+        <div class="menu d-flex flex-wrap justify-center">
+          <MenuCircle v-for="menu in menus" :key="menu.text" :text="menu.text" :link="route + menu.text" />
+        </div>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -36,6 +39,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    route: function() {
+      return `/vs/${this.name}/`
+    },
   },
   components: {
     Character,

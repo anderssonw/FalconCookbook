@@ -41,6 +41,12 @@ const routes = [
         path: 'vs/:character',
         name: 'VersusChar',
         component: () => import('../views/VersusChar.vue'),
+        children: [
+          {
+            path:'play',
+            component: () => import("../views/Playground.vue")
+          }
+        ]
       },
       {
         path: 'vs/:character/:fundamental',
