@@ -51,7 +51,7 @@ export default {
 <style>
 .chars {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
 
@@ -70,17 +70,19 @@ export default {
   cursor: pointer;
 }
 
-.vs-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+@media all and (min-width:574px) {
+  .chars {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
-
-.vs-row:last-child {
-  justify-content: center;
+@media all and (min-width:774px) {
+  .chars {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
 }
-
-.vs-container:last-child {
-  justify-content: left;
+@media all and (min-width:900px) {
+  .chars {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
 }
 </style>
