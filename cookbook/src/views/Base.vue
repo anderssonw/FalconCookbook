@@ -50,12 +50,12 @@ export default {
     margin-bottom: 20px;
   }
 
-  .menu-circle {
+  .whole .menu-circle {
     @include menu-dimensions(100px, 18px)
   }
 
   @include mq-min(600px) {
-    .menu-circle {
+    .whole .menu-circle {
       @include menu-dimensions(160px, 25px)
     }
   }

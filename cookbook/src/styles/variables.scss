@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,900&family=Nunito+Sans:ital,wght@1,900&display=swap');
 
 $body-font-family: 'Kanit';
+$bg-text:  #eeeeee;
 
 @import '~vuetify/src/styles/styles.sass';
 
@@ -21,4 +22,9 @@ $body-font-family: 'Kanit';
   font-weight: bold;
   font-style: italic;
   text-align: center;
+}
+
+@mixin normal-text {
+    font-family: arial;
+    font-weight: normal;
 }

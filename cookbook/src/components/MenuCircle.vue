@@ -52,17 +52,13 @@ export default {
   color: #dddddd;
   background: #c6c6c6;
 
-  /* border-radius: 80px; */
-  /* width: 9rem;
-  height: 9rem; */
   margin-right: .5rem;
   margin-left: .5rem;
 
   text-decoration: none;
   font-family: arial;
   font-weight: 800;
-  /* line-height: 1.7rem;
-  font-size: 1.7rem; */
+
   &:hover {
     color: #fefefe;
     background: #cb5464 !important;
